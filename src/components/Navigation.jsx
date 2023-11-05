@@ -32,7 +32,7 @@ const Navigation = () => {
             <NavLink className="header-link" to="/register">
               Register
             </NavLink>
-            <NavLink className="header-link" to="/login">
+            <NavLink className="header-link" to="/">
               Login
             </NavLink>
           </div>
