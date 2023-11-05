@@ -2,11 +2,12 @@ import React from 'react';
 import { StyledHeader } from './Navigation.styled';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectAuthIsSignedIn } from 'redux/auth.selectors';
+import { selectAuthIsSignedIn, selectAuthUserData } from 'redux/auth.selectors';
 import { logoutUser } from 'redux/authReducer';
 
 const Navigation = () => {
   const isLoggedIn = useSelector(selectAuthIsSignedIn);
+  const mailUser = useSelector(selectAuthUserData);
   const dispatch = useDispatch();
 
   const handleLogOut = () => {
@@ -22,9 +23,12 @@ const Navigation = () => {
               Contacts
             </NavLink>
           </div>
-          <button onClick={handleLogOut} className="logout-btn">
-            Logout
-          </button>
+          <div className="nav-user-container">
+            <span className="user-email">{mailUser.email}</span>
+            <button onClick={handleLogOut} className="logout-btn">
+              Logout
+            </button>
+          </div>
         </nav>
       ) : (
         <nav className="header-nav authorization">

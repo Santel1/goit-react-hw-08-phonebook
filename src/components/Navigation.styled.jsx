@@ -15,6 +15,19 @@ export const StyledHeader = styled.header`
     display: flex;
     gap: 20px;
   }
+  .nav-user-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .user-email {
+    color: white;
+    background-color: #696969;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 22px;
+  }
   .header-link {
     color: white;
     border: 1px solid white;
